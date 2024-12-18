@@ -27,7 +27,7 @@ export default function AuthLayout({ children }: Props) {
       <input className='border-solid border-2 border-purple-500' value={input} onChange={(e) => setInput(e.target.value)} />
 
       <h2 className="mt-2">You have to log in</h2>
-      {children}
+      <p> or you....?</p>
 
       <div>
         {paths.map(p => (
@@ -40,6 +40,8 @@ export default function AuthLayout({ children }: Props) {
           </Button>
         ))}
       </div>
+
+      {children}
     </>
   );
 }

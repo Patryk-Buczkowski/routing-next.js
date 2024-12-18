@@ -24,10 +24,14 @@ export default function Parts({ params }: Params) {
   }, [params]);
 
   if (isLading) {
+    console.log('loader from component');
     return (
-      <LinearProgress sx={{
-        color: 'blue'
-      }} aria-busy={true} />
+      <LinearProgress
+        sx={{
+          color: 'blue',
+        }}
+        aria-busy={true}
+      />
     );
   }
 
