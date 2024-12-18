@@ -1,3 +1,5 @@
+"use client"
+
 import { LoadingButton } from '@mui/lab';
 import { useEffect, useState } from 'react';
 
@@ -19,16 +21,15 @@ export default function RootLayout({
 
   useEffect(() => {
     const unwrapParams = async () => {
-      const { productId, reviewId } = await params;
-      setIsLoading({ productId, reviewId });
+      const { productId } = await params;
+      setIsLoading({ productId});
       setParam(parseInt(productId, 10));
-      setReview(parseInt(reviewId, 10));
     };
 
     unwrapParams();
   }, [params]);
 
-  if (!isLoading.productId || !isLoading.reviewId) {
+  if (!isLoading.productId) {
     return (
       <LoadingButton loading loadingIndicator="Loading…" variant="outlined">
         Fetch data
@@ -38,8 +39,8 @@ export default function RootLayout({
   return (
     <>
       {children}
-      <h2>hello new</h2>
-      <p>pass here id&apos;s</p>
+      <h2 className='mt-2'>Details page of product:</h2>
+      <p>id: {param}</p>
     </>
   );
 }

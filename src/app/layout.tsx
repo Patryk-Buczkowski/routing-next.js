@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className='min-h-full'>
         <header className="max-h-fit mb-2 top-0 left-0 w-full bg-blue-800 p-1 z-10">
-          <nav className="flex gap-1 bg-blue-600 rounded">
+          <nav className="flex ml-1 gap-1 bg-blue-600 rounded">
             {Object.entries(links).map(([key, value], index, arr) => (
               <Link key={key} href={value} className="text-green-500">
                 {key}

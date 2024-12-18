@@ -11,12 +11,12 @@ export default function Start() {
         Ymmmm.. Login maybe?
       </Button>
 
-      <Button color="primary" onClick={() => router.push('/forgot-password')}>
-        You Forgot password?
-      </Button>
-
       <Button color="primary" onClick={() => router.push('/register')}>
       Need to Register?
+      </Button>
+
+      <Button color="primary" onClick={() => router.push('/forgot-password')}>
+        You Forgot password?
       </Button>
     </div>
   );
