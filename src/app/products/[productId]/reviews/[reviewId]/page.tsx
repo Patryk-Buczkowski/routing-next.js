@@ -13,6 +13,7 @@ type Props = {
   };
 };
 
+
 export default function ReviewDetail({ params }: Props) {
   const [param, setParam] = useState(0);
   const [review, setReview] = useState(0);

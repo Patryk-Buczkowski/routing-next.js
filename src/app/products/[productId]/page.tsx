@@ -1,13 +1,25 @@
-type Params = {
+import { generateProductMetadata } from '@/app/_lib/MetadataProduct';
+import { MyLink } from '@/components/buttons/Link';
+
+type Props = {
   params: {
     productId: string;
-  }
-}
+  };
+};
 
-export default function ProductsDetails({ params }:Params) {
+export const generateMetadata = ({ params }: Props) =>
+  generateProductMetadata(params.productId);
+
+export default function ProductsDetails({ params }: Props) {
   return (
-    <div>
-      <h1>Details of product {params.productId} </h1>
-    </div>
+    <>
+      <div className='flex gap-2'>
+        <MyLink name='Back' to="/products" />
+        <MyLink name='contact with replace' to="/contact" boolean />
+        <MyLink name='contact without replace' to="/contact" />
+      </div>
+
+      <h1 className='mt-2'>Details of product {params.productId} </h1>
+    </>
   );
 }
