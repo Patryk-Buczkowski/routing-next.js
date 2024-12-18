@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styl nawigacji */
+nav {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #171717;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #0056b3;
+}
+
