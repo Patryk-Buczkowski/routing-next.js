@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <Image
       src='/404.png'
-      alt="404"
+      alt="4004"
       layout="fill" 
     //   width={500}         
     //   height={500}        
