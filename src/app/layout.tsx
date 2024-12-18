@@ -9,12 +9,12 @@ export default function RootLayout({
   type Links = Record<string, string>;
 
   const links: Links = {
+    'start': '/',
     'Blog-Main': '/blog',
     'Blog-first': '/blog/first',
     'Blog-second': '/blog/second',
     'Docs': '/docs',
-    'Action': '/action',
-    'start': '/',
+    'Action': '/action',    
     "home": '/home',
     'About': '/about',
     'Contact': '/contact',
@@ -24,7 +24,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body className='min-h-full'>
         <header className="max-h-fit mb-2 top-0 left-0 w-full bg-blue-800 p-1 z-10">
           <nav className="flex gap-1 bg-blue-600 rounded">
             {Object.entries(links).map(([key, value], index, arr) => (
@@ -36,7 +36,9 @@ export default function RootLayout({
           </nav>          
         </header>
 
-        <main className="p-4">{children}</main>
+        <main className="p-4">
+          {children}
+          </main>
 
         <footer className="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4">
           <p className="text-center">© 2024 My Website</p>
