@@ -1,10 +1,22 @@
-"use client"
+'use client';
 
-export default function ErrorBoundary() {
+import { MyButton } from '@/components/buttons/Button';
+
+type Props = {
+  error: Error;
+  reset: () => void;
+};
+
+export default function ErrorBoundary({ error, reset }: Props) {
   return (
     <>
+      <MyButton
+        func={reset}
+        name="reset"
+      />
       <p>Simulation !!!</p>
-      <div>Error in product id</div>
+      <p>Error in product id</p>
+      <p>{error.message}</p>
     </>
   );
 }
