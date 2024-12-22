@@ -7,13 +7,5 @@ export const metadata = {
 };
 
 export default function NotFound() {
-  return (
-    <Image
-      src='/404.png'
-      alt="404"
-      layout="fill" 
-    //   width={500}         
-    //   height={500}        
-    />
-  );
+  return <Image src="/404.png" alt="404" fill style={{ objectFit: 'cover' }} />;
 }

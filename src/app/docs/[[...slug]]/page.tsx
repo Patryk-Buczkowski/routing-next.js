@@ -1,39 +1,13 @@
-'use client';
-import LinearProgress from '@mui/material/LinearProgress';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 type Params = {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 };
 
-export default function Parts({ params }: Params) {
-  const [slug, setSlug] = useState<string[]>([]);
-  const [isLading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const unwrapParams = async () => {
-      const { slug } = await params;
-      setIsLoading(false);
-      setSlug(slug || []);
-    };
-
-    unwrapParams();
-  }, [params]);
-
-  if (isLading) {
-    console.log('loader from component');
-    return (
-      <LinearProgress
-        sx={{
-          color: 'blue',
-        }}
-        aria-busy={true}
-      />
-    );
-  }
+export default async function Parts({ params }: Params) {
+  const { slug } = await params;
 
   switch (slug.length) {
     case 1:

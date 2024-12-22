@@ -7,17 +7,17 @@ export default function OrderProduct() {
 
   const handlerOrder = () => {
     console.log('kupiłeś to dziadostwo');
+    router.push('/home');
 
-    setTimeout(() => {
-        router.push('/home');
-    }, 1000)
+    // setTimeout(() => {
+    //     router.push('/home');
+    // }, 1000)
     
   };
   return (
     <>
       <p>order</p>
       <MyButton func={handlerOrder} name="Order Now!!!" />
-      <button>nnnn</button>
     </>
   );
 }

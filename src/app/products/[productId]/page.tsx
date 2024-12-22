@@ -2,24 +2,28 @@ import { generateProductMetadata } from '@/app/_lib/MetadataProduct';
 import { MyLink } from '@/components/buttons/Link';
 
 type Props = {
-  params: {
+  params: Promise<{
     productId: string;
-  };
+  }>;
 };
 
-export const generateMetadata = ({ params }: Props) =>
-  generateProductMetadata(params.productId);
+export const generateMetadata = async ({ params }: Props) => {
+  const {productId} = await params;
+  generateProductMetadata(productId);
+}
+  
 
-export default function ProductsDetails({ params }: Props) {
+export default async function ProductsDetails({ params }: Props) {
+  const {productId} = await params;
   return (
     <>
-      <div className='flex gap-2'>
-        <MyLink name='Back' to="/products" />
-        <MyLink name='contact with replace' to="/contact" boolean />
-        <MyLink name='contact without replace' to="/contact" />
+      <div className="flex gap-2">
+        <MyLink name="Back" to="/products" />
+        <MyLink name="contact with replace" to="/contact" boolean />
+        <MyLink name="contact without replace" to="/contact" />
       </div>
 
-      <h1 className='mt-2'>Details of product {params.productId} </h1>
+      <h1 className="mt-2">Details of product {productId} </h1>
     </>
   );
 }

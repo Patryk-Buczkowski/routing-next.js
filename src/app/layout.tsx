@@ -18,7 +18,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   const links: Links = {
     start: '/',
     'Blog-Main': '/blog',
@@ -30,14 +29,14 @@ export default function RootLayout({
     About: '/about',
     Contact: '/contact',
     Products: '/products',
-    'Products [] reviews []': '/products/0/reviews/00',
-    'Order Product': "order-product"
+    'Products [] reviews []': '/products/0/reviews/0',
+    'Order Product': '/order-product',
   };
 
   return (
     <html lang="en">
       <body className="min-h-full">
-        <header className="max-h-fit mb-2 top-0 left-0 w-full bg-blue-800 p-1 z-10">
+        <header className="relative max-h-fit mb-2 top-0 left-0 w-full bg-blue-800 p-1 z-20">
           <nav className="flex ml-1 gap-1 bg-blue-600 rounded">
             {Object.entries(links).map(([key, value], index, arr) => (
               <Link key={key} href={value} className="text-green-500">
