@@ -4,11 +4,15 @@
 
 @layer utilities {
   .grid-cols-layout {
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 200px 1fr;
   }
   .grid-rows-layout {
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto auto;
   }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 

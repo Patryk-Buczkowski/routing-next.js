@@ -1,3 +1,4 @@
+import { MyLink } from '@/components/buttons/Link';
 import React from 'react';
 // import UsersPage from './@users/page';
 // import RevenuePage from './@revenue/page';
@@ -12,102 +13,62 @@ type Props = {
 
 export default function ComplexDash({
   children,
-}: // notifications,
-// revenue,
-// users,
-Props) {
+  notifications,
+  revenue,
+  users,
+}: Props) {
+  const namesAside = ['Dashboard', 'Reports', 'Settings', 'Help'];
+
   return (
-    <>
-      <div>{children}</div>
+    <div className="bg-slate-500 grid grid-rows-layout grid-cols-1 lg:grid-cols-layout gap-x-4 gap-y-2 p-1">
+      <header className="col-span-full bg-blue-600 text-white p-4 text-center rounded">
+        <h1 className="text-2xl font-bold">Advanced Tailwind Grid Layout</h1>
+      </header>
 
-      <div className="grid grid-rows-layout grid-cols-1 lg:grid-cols-layout h-screen gap-4 p-4">
-        {/* <!-- Header --> */}
-        <header className="col-span-full bg-blue-600 text-white p-4 text-center rounded">
-          <h1 className="text-2xl font-bold">Advanced Tailwind Grid Layout</h1>
-        </header>
-
-        {/* <!-- Sidebar --> */}
-        <aside className="hidden lg:block bg-gray-200 p-4 rounded">
-          <nav>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="block p-2 bg-gray-300 rounded hover:bg-gray-400"
-                >
-                  Dashboard
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block p-2 bg-gray-300 rounded hover:bg-gray-400"
-                >
-                  Reports
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block p-2 bg-gray-300 rounded hover:bg-gray-400"
-                >
-                  Settings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block p-2 bg-gray-300 rounded hover:bg-gray-400"
-                >
-                  Help
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
-
-        {/* <!-- Main Content --> */}
-        <main className="bg-white p-6 shadow-md rounded">
-          <h2 className="text-xl font-bold mb-4">Main Content</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* <!-- Cards --> */}
-            <div className="bg-blue-100 p-4 rounded shadow">
-              <h3 className="text-lg font-semibold">Card 1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bg-green-100 p-4 rounded shadow">
-              <h3 className="text-lg font-semibold">Card 2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bg-red-100 p-4 rounded shadow">
-              <h3 className="text-lg font-semibold">Card 3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bg-yellow-100 p-4 rounded shadow">
-              <h3 className="text-lg font-semibold">Card 4</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="bg-purple-100 p-4 rounded shadow">
-              <h3 className="text-lg font-semibold">Card 5</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
-        </main>
-
-        {/* <!-- Footer --> */}
-        <footer className="col-span-full bg-gray-800 text-white p-4 text-center rounded">
-          <p>&copy; 2024 My Advanced Layout. All rights reserved.</p>
-        </footer>
+      <div className="hidden lg:block bg-gray-200 p-2 rounded">
+        <nav className="rounded-md">
+          <ul className="w-full space-y-2">
+            {namesAside.map(name => (
+              <MyLink name={name} to={`#${name}`} key={name} className={"block text-center p-2 "} />
+            ))}
+          </ul>
+        </nav>
       </div>
 
-      {/* <div className="flex gap-2 justify-center">
-        <div className="flex flex-col gap-2">
-          <div>{users}</div>
-          <div>{revenue}</div>          
-        </div>
+      <main className="bg-blue-600 p-1.5 shadow-md rounded">
+        <h2 className="text-xl font-bold mb-4">Main Content</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="bg-blue-200 p-4 rounded shadow">
+            <h3 className="text-lg font-semibold">Card 1</h3>
+            {children}
+          </div>
 
-        <div className="flex">{notifications}</div>
-      </div> */}
-    </>
+          <div className="bg-green-100 p-4 rounded shadow">
+            <h3 className="text-lg font-semibold">Card 2</h3>
+           {users}
+          </div>
+
+          <div className="bg-red-100 p-4 rounded shadow">
+            <h3 className="text-lg font-semibold">Card 3</h3>            
+            {revenue}
+          </div>
+
+          <div className="bg-yellow-100 p-4 rounded shadow lg:col-span-2">
+            <h3 className="text-lg font-semibold">Card 4</h3>
+            {notifications}
+          </div>
+
+          <div className="bg-purple-100 p-4 rounded shadow lg:col-start-3">
+            <h3 className="text-lg font-semibold">Card 5</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+
+          <div className="bg-red-800 p-4 rounded shadow lg:col-start-1 lg:col-span-full">
+            <h3 className="text-lg font-semibold">Card 6</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </main>
+    </div>
   );
 }
