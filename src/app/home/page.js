@@ -6,8 +6,8 @@ export default function Home() {
     <div>
       <h1>Witaj w moim pierwszym projekcie Next.js!</h1>
       <p>To jest dynamiczna aplikacja stworzona przy pomocy Next.js.</p>
-      
-      <MyLink to="/complex-dash" name="complex dash"  />
+
+      <MyLink to="/complex-dash" name="Complex dash"  />
     </div>
   );
 }

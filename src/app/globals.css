@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .grid-cols-layout {
+    grid-template-columns: 250px 1fr;
+  }
+  .grid-rows-layout {
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+
 /* Styl nawigacji */
 nav {
   display: flex;
