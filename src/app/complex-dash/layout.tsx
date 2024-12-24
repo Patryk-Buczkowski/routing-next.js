@@ -20,7 +20,7 @@ export default function ComplexDash({
   const namesAside = ['Dashboard', 'Reports', 'Settings', 'Help'];
 
   return (
-    <div className="bg-slate-500 grid grid-rows-layout grid-cols-1 lg:grid-cols-layout gap-x-4 gap-y-2 p-1">
+    <div className="bg-slate-500 grid grid-rows-layout grid-cols-1 lg:grid-cols-layout gap-x-4 gap-y-2 p-2">
       <header className="col-span-full bg-blue-600 text-white p-4 text-center rounded">
         <h1 className="text-2xl font-bold">Advanced Tailwind Grid Layout</h1>
       </header>
@@ -35,7 +35,7 @@ export default function ComplexDash({
         </nav>
       </div>
 
-      <main className="bg-blue-600 p-1.5 shadow-md rounded">
+      <main className="bg-blue-600 p-2 shadow-md rounded">
         <h2 className="text-xl font-bold mb-4">Main Content</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="bg-blue-200 p-4 rounded shadow">
