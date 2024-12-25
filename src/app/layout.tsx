@@ -47,7 +47,7 @@ export default function RootLayout({
           </nav>
         </header>
 
-        <main>{children}</main>
+        <main  className='bg-cyan-600 min-h-[calc(100vh-52px-56px)]'>{children}</main>
 
         <footer className="sticky bottom-0 left-0 w-full bg-gray-800 text-white p-4">
           <p className="text-center">© 2024 My Website</p>
