@@ -7,14 +7,14 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: {
+  params: Promise<{
     productId: string;
     reviewId: string;
-  };
+  }>;
 };
 
-export default function ReviewDetail({ params }: Props) {
-  const { productId, reviewId } = params;
+export default async function ReviewDetail({ params }: Props) {
+  const { productId, reviewId } = await params;
 
   return (
     <>
