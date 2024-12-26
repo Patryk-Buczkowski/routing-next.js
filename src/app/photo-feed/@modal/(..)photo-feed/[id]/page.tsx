@@ -4,7 +4,7 @@ import Modal from '@/components/modal';
 import { notFound } from 'next/navigation';
 
 type Params = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function PhotoModal({ params }: Params) {
