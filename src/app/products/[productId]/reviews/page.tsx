@@ -22,7 +22,7 @@ import { generateProductMetadata } from "@/app/_lib/MetadataProduct";
 
 type Props = {
   params: Promise<{
-    productId: string; // Dynamiczny segment `productId`
+    productId: string;
   }>;
 };
 
@@ -33,12 +33,12 @@ export async function generateStaticParams() {
 }
 
 export const generateMetadata = async ({ params }: Props) => {
-  const { productId } = await params; // Rozpakowanie asynchroniczne
+  const { productId } = await params;
   return generateProductMetadata(productId);
 };
 
 export default async function ReviewList({ params }: Props) {
-  const { productId } = await params; // Rozpakowanie asynchroniczne
+  const { productId } = await params;
   return (
     <h1 className="font-extrabold text-indigo-700">
       Review List of product {productId}
