@@ -7,6 +7,15 @@ type Params = {
   params: Promise<{ id: string }>;
 };
 
+export async function generateStaticParams() {
+  return [
+    { slug: ['1'] },
+    { slug: ['1', '2'] },
+    { slug: ['1', '2', '3'] },
+  ];
+}
+
+
 export default async function PhotoModal({ params }: Params) {
   const { id } = await params;
   const photo: WonderImage = wondersImages.find(p => p.id === id)!;
