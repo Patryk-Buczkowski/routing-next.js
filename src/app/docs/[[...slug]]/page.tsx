@@ -6,6 +6,12 @@ type Params = {
   }>;
 };
 
+export async function generateStaticParams() {
+  return [
+    { slug: ['1'] },
+  ];
+}
+
 export default async function Parts({ params }: Params) {
   const { slug } = await params || [];
 
