@@ -7,6 +7,12 @@ type Props = {
   }>;
 };
 
+export async function generateStaticParams() {
+  return [
+    { slug: ['1'] },
+  ];
+}
+
 export const generateMetadata = async ({ params }: Props) => {
   const {productId} = await params;
   generateProductMetadata(productId);
