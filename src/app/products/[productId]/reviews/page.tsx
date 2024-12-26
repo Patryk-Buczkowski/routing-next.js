@@ -26,13 +26,17 @@ type Props = {
   }>;
 };
 
-// Funkcja `generateMetadata`
+export async function generateStaticParams() {
+  return [
+    { productId: '1' },
+  ];
+}
+
 export const generateMetadata = async ({ params }: Props) => {
   const { productId } = await params; // Rozpakowanie asynchroniczne
   return generateProductMetadata(productId);
 };
 
-// Komponent główny
 export default async function ReviewList({ params }: Props) {
   const { productId } = await params; // Rozpakowanie asynchroniczne
   return (
