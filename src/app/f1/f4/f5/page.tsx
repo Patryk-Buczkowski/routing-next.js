@@ -4,15 +4,19 @@ export default function F5() {
   return (
     <>
       <h1>f5 page</h1>
-      <MyLink
-        to="/home"
-        name="home bug?"
-      />
-      <MyLink
-        to="/action"
-        name="action"
-        cn={'border border-red-500 mt-2'}
-      />
+      <div className="mt-2 w-1/2 mx-auto">
+        <MyLink
+          to="/home"
+          name="home bug?"
+        />
+      </div>
+
+      <div className="mt-2 w-1/2 mx-auto">
+        <MyLink
+          to="/action"
+          name="action"
+        />
+      </div>
     </>
   );
 }
