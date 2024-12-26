@@ -6,6 +6,12 @@ type Params = {
   params: Promise<{ id: string }>;
 };
 
+export async function generateStaticParams() {
+  return [
+    { id: '1' },
+  ];
+}
+
 export default async function PhotoPage({ params }: Params) {
   const { id } = await params;
   const photo: WonderImage = wondersImages.find(p => p.id === id)!;
@@ -13,6 +19,7 @@ export default async function PhotoPage({ params }: Params) {
   if (photo === undefined) {
     return notFound();
   }
+
   return (
     <div className="container m-auto">
       <div className="w-1/2 mx-auto">
