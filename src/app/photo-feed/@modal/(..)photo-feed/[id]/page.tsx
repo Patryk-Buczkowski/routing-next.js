@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Modal from '@/components/modal';
 import { notFound } from 'next/navigation';
 import wondersImages from '../../../wonders';
 
