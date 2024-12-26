@@ -1,1 +1,1 @@
-https://patryk-buczkowski.github.io/routing-next.js/
+https://routing-nextjs.netlify.app/home
