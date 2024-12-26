@@ -10,7 +10,7 @@ export default function Home() {
       <div className="w-1/3 mx-auto mt-3">
         <MyLink
           to="/complex-dash"
-          name="Complex dash"
+          name="Complexx dash"
         />
       </div>
 
