@@ -3,7 +3,7 @@ import { MyLink } from '@/components/buttons/Link';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <h1>Witaj w moim pierwszym projekcie Next.js!</h1>
       <p>To jest dynamiczna aplikacja stworzona przy pomocy Next.js.</p>
 
@@ -13,6 +13,20 @@ export default function Home() {
           name="Complex dash"
         />
       </div>
-    </div>
+
+      <div className="w-1/3 mx-auto mt-3">
+        <MyLink
+          to="/f1"
+          name="f1 intercepting example"
+        />
+      </div>
+
+      <div className="w-1/3 mx-auto mt-3">
+        <MyLink
+          to="/photo-feed"
+          name="Photo feed"
+        />
+      </div>
+    </>
   );
 }

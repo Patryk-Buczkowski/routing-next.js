@@ -4,7 +4,7 @@ import Card from '@/components/card';
 export default function ArchiveNotificationsPage() {
   return (
     <>
-      <Card className="max-h-[25vh] overflow-auto">
+      <Card className="h-[30vh] overflow-auto">
         <p>Archive Page notification</p>
         <p>Archive Page notification</p>
         <p>Archive Page notification</p>

@@ -36,8 +36,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-full">
-        <header className="relative max-h-fit mb-0.1 top-0 left-0 w-full bg-blue-800 p-1 z-20">
-          <nav className="flex ml-1 gap-1 bg-blue-600 rounded">
+        {/* <header className="z-0 relative max-h-fit mb-0.1 top-0 left-0 w-full bg-blue-800 p-1">
+          <nav className="flex gap-1 bg-blue-600 rounded">
             {Object.entries(links).map(([key, value], index, arr) => (
               <Link key={key} href={value} className="text-green-500">
                 {key}
@@ -45,9 +45,24 @@ export default function RootLayout({
               </Link>
             ))}
           </nav>
+        </header> */}
+
+        <header className="relative z-10 max-h-fit mb-0.1 top-0 left-0 w-full bg-blue-800 p-1">
+          <nav className="flex gap-1 bg-blue-600 rounded">
+            {Object.entries(links).map(([key, value], index, arr) => (
+              <Link
+                key={key}
+                href={value}
+                className="text-green-500"
+              >
+                {key}
+                {index < arr.length - 1 && ' |'}
+              </Link>
+            ))}
+          </nav>
         </header>
 
-        <main  className='bg-cyan-600 min-h-[calc(100vh-52px-56px)]'>{children}</main>
+        <main className="min-h-[calc(100vh-52px-56px)]">{children}</main>
 
         <footer className="sticky bottom-0 left-0 w-full bg-gray-800 text-white p-4">
           <p className="text-center">© 2024 My Website</p>

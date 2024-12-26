@@ -9,6 +9,7 @@ type Props = {
   users: React.ReactNode;
   revenue: React.ReactNode;
   notifications: React.ReactNode;
+  login: React.ReactNode;
 };
 
 export default function ComplexDash({
@@ -16,24 +17,31 @@ export default function ComplexDash({
   notifications,
   revenue,
   users,
+  login,
 }: Props) {
   const namesAside = ['Dashboard', 'Reports', 'Settings', 'Help'];
+  const isLoggedin = true;
 
-  return (
+  return isLoggedin ? (
     <div className="bg-slate-500 grid grid-rows-layout grid-cols-1 lg:grid-cols-layout gap-x-4 gap-y-2 p-2">
       <header className="col-span-full bg-blue-600 text-white p-4 text-center rounded">
         <h1 className="text-2xl font-bold">Advanced Tailwind Grid Layout</h1>
       </header>
 
-      <div className="hidden lg:block bg-gray-200 p-2 rounded">
+      <aside className="hidden lg:block bg-gray-200 p-2 rounded">
         <nav className="rounded-md">
           <ul className="w-full space-y-2">
             {namesAside.map(name => (
-              <MyLink name={name} to={`#${name}`} key={name} className={"block text-center p-2 "} />
+              <MyLink
+                name={name}
+                to={`#${name}`}
+                key={name}
+                cn={'block text-center p-2 mt-2 '}
+              />
             ))}
           </ul>
         </nav>
-      </div>
+      </aside>
 
       <main className="bg-blue-600 p-2 shadow-md rounded">
         <h2 className="text-xl font-bold mb-4">Main Content</h2>
@@ -45,11 +53,11 @@ export default function ComplexDash({
 
           <div className="bg-green-100 p-4 rounded shadow">
             <h3 className="text-lg font-semibold">Card 2</h3>
-           {users}
+            {users}
           </div>
 
           <div className="bg-red-100 p-4 rounded shadow">
-            <h3 className="text-lg font-semibold">Card 3</h3>            
+            <h3 className="text-lg font-semibold">Card 3</h3>
             {revenue}
           </div>
 
@@ -70,5 +78,7 @@ export default function ComplexDash({
         </div>
       </main>
     </div>
+  ) : (
+    login
   );
 }
