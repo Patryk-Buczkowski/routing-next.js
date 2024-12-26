@@ -12,11 +12,13 @@ type Props = {
   }>;
 };
 
-// export async function generateStaticParams() {
-//   return [
-//     { slug: ['1'] },
-//   ];
-// }
+export async function generateStaticParams() {
+  return [
+    { reviewId: '1',
+      productId: '1'
+     },
+  ];
+}
 
 export default function ReviewDetail({ params }: Props) {
   const [product, setProduct] = useState(0);
