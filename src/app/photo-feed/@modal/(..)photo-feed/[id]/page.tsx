@@ -9,9 +9,7 @@ type Params = {
 
 export async function generateStaticParams() {
   return [
-    { slug: ['1'] },
-    { slug: ['1', '2'] },
-    { slug: ['1', '2', '3'] },
+    { id: '1' },
   ];
 }
 
