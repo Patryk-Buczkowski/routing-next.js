@@ -3,8 +3,8 @@ import Modal from '@/components/modal';
 import { notFound } from 'next/navigation';
 import wondersImages from '../../../wonders';
 
-export default async function PhotoModal({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function PhotoModal({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
   const photo = wondersImages.find(p => p.id === id); 
 
