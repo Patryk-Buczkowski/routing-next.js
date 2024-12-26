@@ -3,7 +3,7 @@ import wondersImages, { WonderImage } from '../wonders';
 import { notFound } from 'next/navigation';
 
 type Params = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function PhotoPage({ params }: Params) {
