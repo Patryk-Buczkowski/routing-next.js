@@ -1,1 +1,1 @@
-https://patryk-buczkowski.github.io/next.js/
+https://patryk-buczkowski.github.io/routing-next.js/
