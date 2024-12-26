@@ -9,7 +9,7 @@ type Props = {
 
 export async function generateStaticParams() {
   return [
-    { slug: ['1'] },
+    { productId: ['1'] },
   ];
 }
 
