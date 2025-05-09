@@ -23,7 +23,7 @@ export default function RootLayout({
     'Blog-Main': '/blog',
     'Blog-first': '/blog/first',
     'Blog-second': '/blog/second',
-    Docs: '/docs',
+    Docs: '/docs/1/2/3/4/andMore',
     Action: '/action',
     home: '/home',
     About: '/about',
