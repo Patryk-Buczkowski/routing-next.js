@@ -1,5 +1,9 @@
+'use client'
+
+import { MyButton } from '@/components/buttons/Button';
 import { MyLink } from '@/components/buttons/Link';
-import React from 'react';
+import { Button } from '@mui/material';
+import React, { useState } from 'react';
 // import UsersPage from './@users/page';
 // import RevenuePage from './@revenue/page';
 // import NotificationsPage from './@notifications/page';
@@ -17,10 +21,10 @@ export default function ComplexDash({
   notifications,
   revenue,
   users,
-  login,
+  // login,
 }: Props) {
   const namesAside = ['Dashboard', 'Reports', 'Settings', 'Help'];
-  const isLoggedin = true;
+  const [isLoggedin, setIsLoggedIn] = useState(false);
 
   return isLoggedin ? (
     <div className="bg-slate-500 grid grid-rows-layout grid-cols-1 lg:grid-cols-layout gap-x-4 gap-y-2 p-2">
@@ -39,7 +43,9 @@ export default function ComplexDash({
                 cn={'block text-center p-2 mt-2 '}
               />
             ))}
+            <MyButton name='Log out' func={() => setIsLoggedIn(false)}/>
           </ul>
+          
         </nav>
       </aside>
 
@@ -79,6 +85,9 @@ export default function ComplexDash({
       </main>
     </div>
   ) : (
-    login
+    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-3">
+      <p className='text-center'>login</p>
+      <Button onClick={() => setIsLoggedIn(true)} variant="contained">Log in</Button>
+    </div>
   );
 }
