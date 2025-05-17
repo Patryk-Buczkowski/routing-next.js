@@ -1,19 +1,13 @@
 import Link from 'next/link';
 
 type Params = {
-  params: Promise<{
-    slug: string[];
-  }>;
+  params: {
+    slug?: string[];
+  };
 };
 
-export async function generateStaticParams() {
-  return [
-    { slug: ['1'] },
-  ];
-}
-
-export default async function Parts({ params }: Params) {
-  const { slug } = await params || [];
+export default function Parts({ params }: Params) {
+  const slug  = params.slug ?? [];
 
   switch (slug.length) {
     case 1:
